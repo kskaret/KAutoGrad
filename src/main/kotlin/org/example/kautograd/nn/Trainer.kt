@@ -5,6 +5,7 @@ import org.example.kautograd.engine.Value
 class Trainer {
 
     fun train(nn: MLP, xs: List<List<Value>>, yTargets: List<Value>) {
+        
         // training loop
         for (k in 0..19) {
 
@@ -14,7 +15,6 @@ class Trainer {
             // loss
             val loss: Value = lossFunction(yPredictions, yTargets)
 
-            val parameters1 = nn.getParameters();
             // backward pass
             for (p in nn.getParameters()) {
                 p.resetGrad()
